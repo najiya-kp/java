@@ -1,0 +1,25 @@
+/* PROGRAM NO 23 */
+
+import java.awt.*;
+import java.applet.*;
+
+public class ParaRect extends Applet
+{  
+  public void paint(Graphics g) 
+    {
+       Color col =  new Color(Integer.parseInt(this.getParameter("color"),16));
+       g.setColor(col);
+       g.fillRect(Integer.parseInt(getParameter("x")),Integer.parseInt(getParameter("y")),150,100); 
+     }
+
+}
+
+<html>
+<body>
+<applet code="ParaRect" width=1200 height=1000>
+        <param name=x value=100>
+       <param name=y value=200>
+       <param name="color" value="FF0000">
+       </applet>
+</body>
+</html>

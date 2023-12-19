@@ -1,0 +1,41 @@
+/* PROGRAM NO 3 */
+
+import java.util.Scanner;  
+import java.lang.Math; 
+ 
+class Armstrong  
+{    
+static boolean isArmstrong(int n)   
+{   
+int temp, count=0, LT=0, Sum=0;    
+temp=n;    
+while(temp>0)    
+{   
+temp = temp/10;   
+count++;   
+}   
+temp = n;   
+while(temp>0)   
+{      
+LT = temp % 10;    
+Sum +=  (Math.pow(LT, count));     
+temp = temp/10;   
+}  
+if(n==Sum)    
+return true;      
+else return false;   
+}   
+public static void main(String args[])     
+{     
+int start,stop; 
+Scanner sc= new Scanner(System.in);  
+System.out.print("Enter the range from: ");  
+start = sc.nextInt();    
+System.out.print("Enter the range to: ");  
+stop = sc.nextInt();  
+System.out.println("Armstrong Number from "+ start + " to " + stop +" is :");  
+for(int i=start; i<=stop; i++)   
+if(isArmstrong(i))   
+System.out.print(i+ ", ");  
+}   
+}  

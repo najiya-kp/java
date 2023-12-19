@@ -1,0 +1,30 @@
+/* PROGRAM NO 17 */
+
+class volumeDemo
+{
+  double pi;
+  void volume(double l)
+  {
+    System.out.println("volume of cube = "+ l*l*l);
+  }
+  void volume(double l,double w,double h)
+  {
+    System.out.println("volume of rectangle = "+ l*w*h);
+  }
+  void volume(double r,double h)
+  {
+    pi = 3.14;
+    double v = pi*(r*r)*h;
+    System.out.println("volume of cylinder = "+ v);
+  }
+}
+class volume
+{
+  public static void main(String args[])
+  {
+   volumeDemo ob = new volumeDemo();
+   ob.volume(5);
+   ob.volume(5,6,7);
+   ob.volume(5,10);
+  }
+}

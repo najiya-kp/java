@@ -1,0 +1,55 @@
+/* PROGRAM No 20 */
+
+interface Volume {
+    double pi = 3.1415; 
+
+    void readData(); 
+    void dispVolume(); 
+}
+
+class Sphere implements Volume {
+    double radius;
+    double volume;
+
+  
+    public void readData() {
+        radius = 5; 
+    }
+
+
+    public void dispVolume() {
+        // Calculate volume of the sphere
+        volume = (4.0 / 3.0) * pi * radius * radius * radius;
+        System.out.println("Volume of Sphere: " + volume);
+    }
+}
+
+class Cylinder implements Volume {
+    double radius;
+    double height;
+    double volume;
+    
+    public void readData() {
+        radius = 3; 
+        height = 7; 
+    }
+
+    public void dispVolume() {
+        // Calculate volume of the cylinder
+        volume = pi * radius * radius * height;
+        System.out.println("Volume of Cylinder: " + volume);
+    }
+}
+
+public class VolumeCalculation {
+    public static void main(String[] args) {
+        Sphere sphere = new Sphere();
+        Cylinder cylinder = new Cylinder();
+
+        sphere.readData();
+        sphere.dispVolume();
+
+        cylinder.readData();
+        cylinder.dispVolume();
+    }
+}

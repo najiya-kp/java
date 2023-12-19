@@ -1,0 +1,37 @@
+/* PROGRAM NO 4 */
+
+import java.util.Scanner;
+import java.lang.Math;
+
+class Triangle
+{
+   public static void main(String args[])
+   {
+     Scanner sc = new Scanner(System.in);
+     System.out.print("enter the length of first side :");
+     int a = sc.nextInt();
+     System.out.print("enter the length of second side :");
+     int b = sc.nextInt();
+     System.out.print("enter the length of third side :");
+     int c = sc.nextInt();
+     if (a==b && b==c)
+     {
+        System.out.println("the given triangle is Equilateral");
+     }
+     else if (a==b || b==c || a==c)
+     {
+        System.out.println("the given triangle is isosceles");
+     } 
+     else 
+     {
+        System.out.println("the given triangle is Scalene");
+     } 
+     double Perimeter = a + b + c;
+     double s = Perimeter/2;
+     double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+     System.out.print("Area = "+area);
+   }
+}
+     
+     
+    

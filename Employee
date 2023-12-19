@@ -1,0 +1,50 @@
+/* PROGRAM NO 18 */
+
+class Employee {
+    int empID;
+    String name;
+    String designation;
+    String dept;
+
+    public Employee(int empID, String name, String designation, String dept) {
+        this.empID = empID;
+        this.name = name;
+        this.designation = designation;
+        this.dept = dept;
+    }
+}
+
+class Salary extends Employee {
+    double basic;
+    double HRA = 1250;
+    double DA;
+    double allowance;
+    double PF;
+
+    public Salary(int empID, String name, String designation, String dept, double basic) {
+        super(empID, name, designation, dept);
+        this.basic = basic;
+        this.DA = 1.1 * basic;
+        this.allowance = 0.35 * basic;
+        this.PF = 0.12 * basic;
+    }
+
+    public double computeNetSalary() {
+        double netSalary = basic + HRA + DA + allowance - PF;
+        return netSalary;
+    }
+}
+
+public class SalaryCalculation {
+    public static void main(String[] args) {
+        Salary employee1 = new Salary(1001, "John Doe", "Manager", "IT", 50000);
+
+        double netSalary = employee1.computeNetSalary();
+
+        System.out.println("Employee ID: " + employee1.empID);
+        System.out.println("Name: " + employee1.name);
+        System.out.println("Designation: " + employee1.designation);
+        System.out.println("Department: " + employee1.dept);
+        System.out.println("Net Salary: " + netSalary);
+    }
+}
